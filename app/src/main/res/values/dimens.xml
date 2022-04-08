@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titulo_size">35sp</dimen>
+    <dimen name="subtext">16sp</dimen>
+    <dimen name="info">20sp</dimen>
+    <dimen name="margin_gif">15dp</dimen>
+    <dimen name="margin_pad">50dp</dimen>
+    <dimen name="margin_pad2">25dp</dimen>
+    <dimen name="edittext">300dp</dimen>
+    <dimen name="margin_bottom">100dp</dimen>
+    <dimen name="margin_pad3">15dp</dimen>
+</resources>
