@@ -9,4 +9,7 @@
     <dimen name="edittext">300dp</dimen>
     <dimen name="margin_bottom">100dp</dimen>
     <dimen name="margin_pad3">15dp</dimen>
+    <dimen name="margin_left">10dp</dimen>
+    <dimen name="margin_top">5dp</dimen>
+    <dimen name="padding">2dp</dimen>
 </resources>

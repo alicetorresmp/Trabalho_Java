@@ -6,41 +6,56 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CadastrarCliente extends AppCompatActivity {
-    private EditText nome, matricula, endereco, numero, complemento, cidade;
-    private ClienteDAO dao;
+import java.util.ArrayList;
 
-    @SuppressLint("WrongViewCast")
+public class CadastrarCliente extends AppCompatActivity {
+    EditText nome, matricula, endereco, numero, complemento, cidade;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_cliente);
+
         Intent intent = getIntent();
         String nome2 = intent.getSerializableExtra("ParametroLogin").toString();
         TextView texto = (TextView) findViewById(R.id.txtRepeticao);
         texto.setText("Prezado(a) " + nome2 + ", seja bem-vindo ao app!");
-        nome = (EditText) findViewById((R.id.txtNome));
-        matricula = (EditText) findViewById((R.id.txtMatricula));
-        endereco = (EditText) findViewById((R.id.txtEndereco));
-        numero = (EditText) findViewById((R.id.txtNumero));
-        complemento = (EditText) findViewById((R.id.txtComplemento));
-        cidade = (EditText) findViewById((R.id.txtCidade));
-        dao = new ClienteDAO(this);
+
+        nome = findViewById((R.id.txtNome));
+        matricula = findViewById((R.id.txtMatricula));
+        endereco = findViewById((R.id.txtEndereco));
+        numero = findViewById((R.id.txtNumero));
+        complemento = findViewById((R.id.txtComplemento));
+        cidade = findViewById((R.id.txtCidade));
+
+
     }
 
+
+
+
     public void salvar(View view) {
-        String obj_nome = (nome.getText().toString());
-        String obj_matricula = (matricula.getText().toString());
-        String obj_endereco = (endereco.getText().toString());
-        String obj_numero = (numero.getText().toString());
-        String obj_complemento = (complemento.getText().toString());
-        String obj_cidade = (cidade.getText().toString());
-        Cliente c = new Cliente(obj_nome, obj_matricula, obj_endereco, obj_numero, obj_complemento, obj_cidade);
-        long id = dao.inserir(c);
-        Toast.makeText(this, "Cliente Cadastrado com id: " + id, Toast.LENGTH_SHORT).show();
+        Button button = findViewById(R.id.cadastrar);
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(CadastrarCliente.this, ListarClientes.class);
+                Bundle extras = new Bundle();
+                extras.putString("nome", String.valueOf(nome));
+                extras.putString("matricula", String.valueOf(matricula));
+                extras.putString("endereco", String.valueOf(endereco));
+                extras.putString("numero", String.valueOf(numero));
+                extras.putString("complemento", String.valueOf(complemento));
+                extras.putString("cidade", String.valueOf(cidade));
+                intent.putExtras(extras);
+                startActivity(intent);
+            }
+        });
     }
 }

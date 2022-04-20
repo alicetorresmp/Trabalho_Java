@@ -62,7 +62,8 @@
     <TextView
         android:layout_marginTop="@dimen/margin_pad2"
         android:id="@+id/matricula"
-        android:layout_width="@dimen/edittext"        android:layout_height="wrap_content"
+        android:layout_width="@dimen/edittext"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-light"
         android:text="@string/matricula"
         android:textSize="@dimen/info" />

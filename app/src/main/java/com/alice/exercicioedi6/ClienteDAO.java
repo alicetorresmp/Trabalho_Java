@@ -21,7 +21,7 @@ public class ClienteDAO {
         values.put("NUMERO", cliente.getNumero());
         values.put("COMPLEMENTO", cliente.getComplemento());
         values.put("CIDADE", cliente.getCidade());
-        return banco.insert("CLIENTE", null, values);
+        return banco.insert("CLIENTES", null, values);
 
     }
 }

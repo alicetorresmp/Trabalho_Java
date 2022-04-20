@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/A/ExercicioEdi6/app/src/main/res/layout/activity_cadastrar_cliente.xml" value="0.33" />
+        <entry key="..\:/A/ExercicioEdi6/app/src/main/res/layout/activity_listar_clientes.xml" value="0.13272543059777103" />
         <entry key="..\:/A/ExercicioEdi6/app/src/main/res/layout/activity_main.xml" value="0.22741433021806853" />
+        <entry key="..\:/A/ExercicioEdi6/app/src/main/res/layout/mylist.xml" value="0.20652173913043478" />
       </map>
     </option>
   </component>
